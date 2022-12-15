@@ -1,0 +1,45 @@
+body {
+	font-family: "Lexend Deca", serif;
+	background-color: #232F34;
+	color: rgba(255, 255, 255, 0.1);
+	margin: 0;
+	font-size: 24px;
+	overflow: hidden;
+  }
+  body > div {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+  }
+  body > div > div {
+	display: inline-flex;
+	flex-direction: column-reverse;
+  }
+  body > div > div:not(:last-child) {
+	margin-right: 1em;
+  }
+  body > div > div:not(:last-child):nth-child(2n) {
+	margin-right: 2em;
+	position: relative;
+  }
+  body > div > div:not(:last-child):nth-child(2n):after {
+	content: ":";
+	font-size: 2em;
+	color: white;
+	position: absolute;
+	right: -0.675em;
+	bottom: -0.2em;
+  }
+  body > div > div > div {
+	transform: rotate(-90deg);
+	transition: transform 200ms ease-in-out, color 350ms ease-out;
+  }
+  body > div > div > div.highlight {
+	transform: rotate(0deg) scale(2);
+	color: white;
+  }
+  body > div > div > div.highlight ~ div {
+	transform: rotate(-90deg) translate3D(0.4em, 0, 0);
+  }
